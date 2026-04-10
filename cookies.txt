@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+firstbrickconsulting.com	TRUE	/	FALSE	1999999999	PHPSESSID	886412a5fb4a1f4718f53a4681049866
+firstbrickconsulting.com	TRUE	/	FALSE	1999999999	userid	deleted
+
