@@ -77,7 +77,7 @@
   var status = document.getElementById('formStatus');
 
   // Admin email - change this to the website admin email address
-  var ADMIN_EMAIL = 'shailendrarsingh@gmail.com';
+  var ADMIN_EMAIL = 'support@wealthnestpro.in';
 
   function validate(){
     return form.checkValidity();
