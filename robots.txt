@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://naveeninfotech.onreader.com/sitemap.xml
+
+# Note: If there are staging or private sections, disallow them here.

@@ -1,18 +1,48 @@
 // Small client-side script for navbar toggle and inquiry form handling
 (function(){
-  // set year in footer
-  var y = new Date().getFullYear();
-  var els = document.querySelectorAll('#year');
-  els.forEach(function(e){ e.textContent = y });
+  // Load shared footer include and set year in footer after it is inserted
+  (function loadFooter(){
+    var footerWrap = document.getElementById('site-footer');
+    if(!footerWrap) return;
+    fetch('/includes/footer.html', {cache: 'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('Footer fetch failed'); return r.text(); })
+      .then(function(html){
+        footerWrap.innerHTML = html;
+        // set year in footer
+        var y = new Date().getFullYear();
+        var els = footerWrap.querySelectorAll('#year');
+        els.forEach(function(e){ e.textContent = y });
+      })
+      .catch(function(err){
+        // fallback: simple footer if include not available
+        console.warn('Could not load footer include:', err);
+        footerWrap.innerHTML = '<footer class="site-footer container"><p>&copy; <span id="year"></span> Wealthnestpro.in. All rights reserved.</p></footer>';
+        var y = new Date().getFullYear();
+        var els = footerWrap.querySelectorAll('#year');
+        els.forEach(function(e){ e.textContent = y });
+      });
+  })();
 
-  // nav toggle for mobile
-  var toggle = document.querySelector('.nav-toggle');
-  var navLinks = document.querySelector('.nav-links');
-  if(toggle && navLinks){
-    toggle.addEventListener('click', function(){
-      navLinks.classList.toggle('open');
-    });
-  }
+  // Load shared nav include and initialize nav toggle after insertion
+  (function loadNav(){
+    var headerWrap = document.getElementById('site-header');
+    if(!headerWrap) return;
+    fetch('/includes/nav.html', {cache: 'no-cache'})
+      .then(function(r){ if(!r.ok) throw new Error('Nav fetch failed'); return r.text(); })
+      .then(function(html){
+        headerWrap.innerHTML = html;
+        // initialize nav toggle after nav is present
+        var toggle = document.querySelector('.nav-toggle');
+        var navLinks = document.querySelector('.nav-links');
+        if(toggle && navLinks){
+          toggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+        }
+      })
+      .catch(function(err){
+        console.warn('Could not load nav include:', err);
+        // fallback: leave header blank
+      });
+  })();
 
   // --- Carousel (if present) ---
   (function(){
