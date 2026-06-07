@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://naveeninfotech.onreader.com/sitemap.xml
+Sitemap: https://wealthnestpro.in/sitemap.xml
 
 # Note: If there are staging or private sections, disallow them here.
