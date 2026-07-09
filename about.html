@@ -29,10 +29,17 @@
     "description": "Learn about our founders and our approach to personalised wealth management."
   }
   </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <script>
+  tailwind.config = {
+      darkMode:'class'
+  }
+  </script>
 </head>
-<body>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
+  <button id="theme-toggle" class="border rounded-lg px-3 py-2">🌙</button>
   <div id="site-header"></div>
-
   <main class="container">
     <h1>About Wealthnestpro.in</h1>
     <p>Wealthnestpro.in is a startup wealth management firm focused on delivering personalised investment strategies, retirement planning, and tax-efficient wealth transfer solutions. Founded by industry veterans, we combine modern technology with tried-and-true financial principles.</p>

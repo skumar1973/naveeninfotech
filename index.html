@@ -7,7 +7,7 @@
   <meta name="description" content="Wealthnestpro.in — Helping individuals and businesses grow and preserve wealth through personalised financial planning and investment strategies.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://wealthnestpro.in/">
-  <link rel="icon" href="assets/logo1.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Wealthnestpro.in - Home">
@@ -39,11 +39,19 @@
     ]
   }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <script>
+  tailwind.config = {
+      darkMode:'class'
+  }
+  </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<!-- <body> -->
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
+  <button id="theme-toggle" class="border rounded-lg px-3 py-2">🌙</button>
   <div id="site-header"></div>
-
   <main>
     <section class="hero">
       <div class="hero-inner container">
@@ -120,9 +128,7 @@
       
     </section>
   </main>
-
   <div id="site-footer"></div>
-
   <script src="js/main.js"></script>
 </body>
 </html>

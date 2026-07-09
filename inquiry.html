@@ -26,10 +26,17 @@
     "description": "Send an inquiry to Wealthnestpro.in and we'll respond with a personalised plan."
   }
   </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <script>
+  tailwind.config = {
+      darkMode:'class'
+  }
+  </script>
 </head>
-<body>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
+  <button id="theme-toggle" class="border rounded-lg px-3 py-2">🌙</button>
   <div id="site-header"></div>
-
   <main class="container">
     <h1>Inquiry</h1>
     <p>Please fill out the form below and we'll get back to you shortly.</p>

@@ -160,3 +160,25 @@
     sendBtn.textContent = 'Send';
   });
 })();
+
+const toggle = document.getElementById("theme-toggle");
+if (!toggle) {
+    console.warn("Theme toggle button not found.");
+} else {
+      console.warn("Theme toggle button found.");
+if(localStorage.theme==="dark"){
+    document.documentElement.classList.add("dark");
+}
+
+toggle.addEventListener("click",()=>{
+  alert("Theme toggle clicked");
+    document.documentElement.classList.toggle("dark");
+
+    if(document.documentElement.classList.contains("dark")){
+        localStorage.theme="dark";
+    }else{
+        localStorage.theme="light";
+    }
+
+});
+}
