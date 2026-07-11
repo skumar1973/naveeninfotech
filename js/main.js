@@ -161,24 +161,79 @@
   });
 })();
 
-const toggle = document.getElementById("theme-toggle");
-if (!toggle) {
-    console.warn("Theme toggle button not found.");
-} else {
-      console.warn("Theme toggle button found.");
+const html=document.documentElement;
+
+const button=document.getElementById("theme-toggle");
+
+const menuButton=document.getElementById("menu-button");
+
+const mobileMenu=document.getElementById("mobile-menu");
+
+// Theme
+
 if(localStorage.theme==="dark"){
-    document.documentElement.classList.add("dark");
+
+    html.classList.add("dark");
+
+    button.textContent="☀️";
+
 }
 
-toggle.addEventListener("click",()=>{
-  alert("Theme toggle clicked");
-    document.documentElement.classList.toggle("dark");
+button.addEventListener("click",()=>{
 
-    if(document.documentElement.classList.contains("dark")){
-        localStorage.theme="dark";
-    }else{
-        localStorage.theme="light";
-    }
+    html.classList.toggle("dark");
+
+    const dark=html.classList.contains("dark");
+
+    localStorage.theme=dark?"dark":"light";
+
+    button.textContent=dark?"☀️":"🌙";
 
 });
-}
+
+// Mobile Menu
+
+menuButton.addEventListener("click",()=>{
+
+    mobileMenu.classList.toggle("hidden");
+
+});
+
+// Scroll-to-top button
+const scrollTopButton = document.getElementById("scrollTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollTopButton.classList.remove("hidden");
+    } else {
+        scrollTopButton.classList.add("hidden");
+    }
+});
+
+scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+
+// Fade-in animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-8");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+        }
+    });
+});
+
+document.querySelectorAll("section").forEach((section) => {
+    section.classList.add(
+        "opacity-0",
+        "translate-y-8",
+        "transition-all",
+        "duration-700"
+    );
+
+    observer.observe(section);
+});

@@ -48,87 +48,503 @@
   </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<!-- <body> -->
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
-  <button id="theme-toggle" class="border rounded-lg px-3 py-2">🌙</button>
-  <div id="site-header"></div>
-  <main>
-    <section class="hero">
-      <div class="hero-inner container">
-        <div class="hero-bg">
-          <img src="assets/hero.svg" alt="Wealthnestpro hero banner">
-        </div>
-<!--         <div class="hero-overlay">
-        <div class="hero-content">
-          <h1>Wealthnestpro.in</h1>
-          <p>Helping you grow and preserve wealth with clarity and trust.</p>
-        </div>
-        </div> -->
-        <!-- CTA moved to its own section after the carousel -->
-      </div>
-    </section>
 
-<!--     <section class="cta-section container" aria-label="Call to action">
-      <div class="hero-cta-card">
-        <div class="cta-buttons">
-          <a href="inquiry.html" class="btn btn-primary">
-            Start Your Journey
-          </a>
-          <a href="https://wa.me/919818933958?text=Hello%20Wealthnestpro" target="_blank" rel="noopener" class="btn btn-whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-btn" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.732 5.408 2.124 7.771L.929 23.5l8.272-2.737a9.9 9.9 0 004.618 1.176h.004c5.44 0 9.868-4.436 9.868-9.893 0-2.64-.967-5.126-2.724-7.007a9.855 9.855 0 00-7.133-2.954m6.604 17.785a8.354 8.354 0 01-4.782 1.438h-.003c-1.447 0-2.869-.364-4.113-1.053L2.695 22.26l2.06-7.532a8.386 8.386 0 011.286-3.955 8.323 8.323 0 0113.82.558 8.343 8.343 0 01-2.358 11.89"/>
-            </svg>
-            Chat on WhatsApp
-          </a>
-        </div>
-      </div>
-    </section> -->
+    <body class="bg-white text-gray-800 dark:bg-slate-900 dark:text-white transition-colors duration-300">
+        <!-- Navbar -->
+        <header
+            class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur border-b border-gray-200 dark:border-slate-800">
+            <nav class="max-w-7xl mx-auto">
+                <div class="flex h-16 items-center justify-between px-4">
+                    <!-- LEFT -->
+                    <div class="flex items-center gap-3">
+                        <img
+                            src="assets/logo.svg"
+                            alt="Company Logo"
+                            class="h-20 w-20" />
+                        <a
+                            href="#"
+                            class="text-xl font-bold hover:text-blue-600">
+                            Loan Advisor
+                        </a>
+                    </div>
+                    <!-- CENTER -->
+                    <div class="hidden md:flex gap-8 font-medium">
+                        <a href="#about"
+                            class="hover:text-blue-600">
+                            About
+                        </a>
+                        <a href="#services"
+                            class="hover:text-blue-600">
+                            Services
+                        </a>
+                        <a href="#process"
+                            class="hover:text-blue-600">
+                            Process
+                        </a>
+                        <a href="#expertise"
+                            class="hover:text-blue-600">
+                            Expertise
+                        </a>
+                        <a href="#contact"
+                            class="hover:text-blue-600">
+                            Contact
+                        </a>
+                    </div>
+                    <!-- RIGHT -->
+                    <div class="flex items-center gap-2">
+                        <button
+                            id="theme-toggle"
+                            class="rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                            🌙
+                        </button>
+                        <a
+                            href="#contact"
+                            class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-blue-700">
+                            Book a consultation
+                        </a>
+                        <button
+                            id="menu-button"
+                            class="md:hidden rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-slate-700">
+                            ☰
+                        </button>
 
-    <section class="carousel container" aria-label="Highlights carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide">
-          <img src="assets/slide1.svg" alt="Tailored Portfolios">
-          <div class="carousel-caption">
-            <h3>Tailored Portfolios</h3>
-            <p>We create strategies that match your life goals.</p>
-          </div>
-        </div>
-        <div class="carousel-slide">
-          <img src="assets/slide2.svg" alt="Retirement Planning">
-          <div class="carousel-caption">
-            <h3>Retirement Planning</h3>
-            <p>Plan today for the life you want tomorrow.</p>
-          </div>
-        </div>
-        <div class="carousel-slide">
-          <img src="assets/slide3.svg" alt="Tax-efficient Strategies">
-          <div class="carousel-caption">
-            <h3>Tax-efficient Strategies</h3>
-            <p>We optimise your plan to reduce unnecessary tax drag.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control prev" id="carouselPrev" aria-label="Previous slide">‹</button>
-      <button class="carousel-control next" id="carouselNext" aria-label="Next slide">›</button>
-      <div class="carousel-indicators" id="carouselIndicators" role="tablist"></div>
-    </section>
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div
+                    id="mobile-menu"
+                    class="hidden border-t border-gray-200 dark:border-slate-700 md:hidden">
+                    <div class="flex flex-col p-4 space-y-3">
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#process">Process</a>
+                        <a href="#expertise">Expertise</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-    <section class="intro container">
-      <h2>Our Mission</h2>
-      <p>To provide personalised wealth management solutions that empower clients to reach their financial goals with confidence.</p>
+        <main>
+            <!-- Hero -->
+            <section class="relative isolate overflow-hidden">
+                <!-- Decorative Background -->
+                <div
+                    aria-hidden="true"
+                    class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl">
+                    <div
+                        class="relative left-1/2 aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-12 bg-gradient-to-tr from-pink-400 via-purple-400 to-indigo-500 opacity-30 sm:w-[72rem]"
+                        style="clip-path: polygon(74% 44%,100% 62%,97% 27%,85% 0%,80% 2%,72% 32%,60% 62%,52% 68%,47% 58%,45% 34%,27% 76%,0% 64%,18% 100%,28% 77%,76% 98%,74% 44%);">
+                    </div>
+                </div>
 
-      <h2>Our Vision</h2>
-      <p>To be the trusted partner for individuals and businesses seeking long-term financial wellbeing.</p>
+                <div
+                    class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 lg:grid-cols-2 lg:px-8">
+                    <!-- LEFT -->
+                    <div>
+                        <p
+                            class="mb-4 inline-flex rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700 dark:bg-blue-900 dark:text-blue-300">
+                            Premium Loan Guidance
+                        </p>
+                        <h1
+                            class="text-5xl font-extrabold leading-tight tracking-tight lg:text-6xl">
+                            Elevated loan 
+                            <span
+                                class="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                                Solutions,
+                            </span>
+                            guided by experience.
+                        </h1>
+                        <p
+                            class="mt-8 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+                            Access premium support for home loans, balance transfer, and loan against property through a trusted network of banks, 
+                            NBFCs, and housing finance companies. Competitive rates, faster processing, and dependable guidance before and 
+                            beyond disbursal.
+                        </p>
 
-      <h2>What Our Clients Say</h2>
-      <blockquote>
-        "Wealthnestpro.in helped us streamline our investments and plan for the future — professional and transparent." — Jane D.
-      </blockquote>
+                        <div
+                            class="mt-10 flex flex-wrap gap-4">
+                            <a
+                                href="#contact"
+                                class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-blue-700">
+                                Speak with an Expert
+                            </a>
 
-      
-    </section>
-  </main>
-  <div id="site-footer"></div>
-  <script src="js/main.js"></script>
-</body>
+                            <a
+                                href="#services"
+                                class="rounded-xl border border-gray-300 px-6 py-3 font-semibold hover:bg-gray-100 dark:border-slate-700 dark:hover:bg-slate-800">
+
+                                Explore Services
+
+                            </a>
+
+                        </div>
+
+                        <div
+                            class="mt-10 flex flex-wrap gap-8 text-sm text-gray-500 dark:text-gray-400">
+                            <span>✓ Wide lender network across banks, NBFCs, and housing finance companies</span>
+                            <span>✓ Expert guidance backed by ex-bankers and experienced professionals</span>
+                            <span>✓ Support from application to sanction, disbursal, and beyond</span>
+                            <span>✓ Faster processing with thoughtful documentation assistance</span>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+
+                    <div
+                        class="flex justify-center">
+                        <div
+                            class="relative">
+                            <div
+                                class="rounded-3xl border border-gray-200 bg-white p-8 shadow-2xl dark:border-slate-700 dark:bg-slate-800">
+                                <img
+                                    src="assets/hero.png"
+                                    alt="Hero Illustration"
+                                    class="rounded-xl">
+                            </div>
+                            <div
+                                class="absolute -left-8 -top-8 rounded-xl bg-blue-600 px-4 py-3 text-white shadow-xl">
+                                Trusted 
+                            </div>
+
+                            <div
+                                class="absolute -bottom-6 -right-8 rounded-xl bg-green-600 px-4 py-3 text-white shadow-xl">
+                                Approach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="bg-gray-50 py-24 dark:bg-slate-800/50">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="grid items-center gap-16 lg:grid-cols-2">
+                        <!-- Left -->
+                        <div>
+                            <p class="font-semibold text-blue-600">
+                                ABOUT US
+                            </p>
+
+                            <h2 class="mt-3 text-4xl font-bold">
+                                A more refined way to borrow.
+                            </h2>
+
+                            <p >
+                                We help customers navigate home loans, balance transfer, and loan against property with clarity, 
+                                discretion, and confidence. Our approach is advisory-led, carefully managed, 
+                                and focused on satisfaction across the full customer journey
+                            </p>
+
+                            <div class="mt-8 grid grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-3xl font-bold text-blue-600">
+                                        Personalized over transactional
+                                    </h3>
+
+                                    <p class="mt-2 text-gray-500">
+                                        Every requirement is assessed with attention to profile, property type, lender fit, and long-term comfort. 
+                                        The goal is not just approval, but the right structure and a smoother borrowing experience.
+                                    </p>
+
+                                </div>
+
+                                <div>
+                                    <h3 class="text-3xl font-bold text-blue-600">
+                                        Support beyond disbursal
+                                    </h3>
+
+                                    <p class="mt-2 text-gray-500">
+                                        We remain available for post-disbursal queries, coordination support, and service assistance wherever possible, 
+                                        because genuine customer satisfaction extends beyond closure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right -->
+
+                        <div>
+                            <div class="rounded-3xl bg-white p-10 shadow-xl dark:bg-slate-900">
+                                <img
+                                    src="assets/about.jpg"
+                                    alt="About"
+                                    class="rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Services -->
+
+            <section id="services" class="bg-gray-50 py-24 dark:bg-slate-800/50">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="text-left">
+                        <p class="font-semibold text-blue-600">
+                            OUR SERVICES
+                        </p>
+                        <h2 class="mt-4 text-4xl font-bold">
+                            Solutions designed around your requirement.
+                        </h2>
+                        <span class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                            Each solution is presented with care so the customer benefits from both financial value and process comfort.
+                        </span>
+                    </div>
+                    <div class="mt-16 grid gap-8 md:grid-cols-3 lg:grid-rows-1">
+                        <div class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+                            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600 text-2xl text-white">
+                            S1
+                            </div>
+                            <h3 class="text-2xl font-semibold">
+                                Home Loans
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                Tailored assistance for home purchase, construction, and resale property funding through leading lenders.
+                            </p>
+                        </div>
+                        <div class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+                            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600 text-2xl text-white">
+                            S2
+                            </div>
+                            <h3 class="text-2xl font-semibold">
+                                Balance Transfer
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                Smarter refinancing options to help reduce interest cost, improve terms, and explore top-up opportunities where suitable.
+                            </p>
+                        </div>
+                        <div class="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+                            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600 text-2xl text-white">
+                            S3
+                            </div>
+                            <h3 class="text-2xl font-semibold">
+                                Loan Against Property
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                            Well-structured property-backed finance solutions for business, personal, or expansion needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process -->
+
+            <section id="process" class="bg-gray-50 py-24 dark:bg-slate-800/50">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="text-left">
+                        <p class="font-semibold text-blue-600">
+                            OUR PROCESS
+                        </p>
+                        <h2 class="mt-4 text-4xl font-bold">
+                            A thoughtful, seamless process.
+                        </h2>
+                        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                            The experience is designed to feel structured, transparent, and reassuring at every step.
+                        </p>
+                    </div>
+                    <div class="mt-20 grid gap-10 md:grid-cols-3 lg:grid-rows-2">
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P1
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Understand your requirement
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                We begin with your financial need, property profile, and borrowing objective.
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P2
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Curate suitable options
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                We help review relevant solutions across multiple lenders and institutions.
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P3
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Manage documentation
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                Our team supports paperwork, application flow, and lender coordination.
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P4
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Drive approval and disbursal
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                We stay engaged through review, sanction, and completion of the process.
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P5
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Continue supporting you
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                Even after disbursal, we remain available for assistance and service support wherever possible.
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-3xl font-bold text-white">
+                                P6
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold">
+                                Build long-term trust
+                            </h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                Our goal is not only a successful loan outcome, but a relationship built on satisfaction and confidence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expertise -->
+            <section id="expertise" class="bg-gray-50 py-24 dark:bg-slate-800/50">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="text-left">
+                        <p class="font-semibold text-blue-600">
+                            OUR EXPERTISE
+                        </p>
+                        <h2 class="mt-4 text-4xl font-bold">
+                            Led by experience. Backed by insight.
+                        </h2>
+                        <p class="mt-6 text-gray-600 dark:text-gray-300">
+                            Our team includes experienced professionals and ex-bankers who understand credit evaluation, 
+                            documentation, lender expectations, and process management from the inside.
+                        </p>
+                    </div>
+                    <div class="mt-16 flex flex-wrap justify-center gap-4">
+                        <div class="rounded-full bg-blue-100 px-5 py-2 font-medium dark:bg-slate-700">
+                            <span >Ex-banker perspective.</span>
+                            <p>This experience helps reduce avoidable delays, improve documentation readiness, and guide customers 
+                            with more precision at every stage of the loan journey.</p>
+                        </div>
+                    
+                        <span class="rounded-full bg-blue-100 px-5 py-2 font-medium dark:bg-slate-700">Customer-first service.
+                            <p>We combine lender access with thoughtful handholding so customers feel informed, supported, 
+                            and confident from first discussion to final outcome.</p>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+
+            <section id="contact" class="bg-gray-50 py-24 dark:bg-slate-800/50">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="text-left">
+                        <p class="font-semibold text-blue-600">
+                            CONTACT
+                        </p>
+                        <h2 class="mt-4 text-4xl font-bold">
+                            Secure the right loan with confidence.
+                        </h2>
+                        <p>
+                            If you are looking for trusted guidance on home loans, balance transfer, or loan against property, 
+                            our team is here to help with expertise, lender access, and service that stays with you beyond the transaction.
+                        </p>
+                        <div class="mt=2">
+                        <span class="dark:bg-gray-800 font-semibold text-white-600">Start a conversation </span>
+                        <p>Email: <span>yourname@example.com</span></p>
+                        <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-phone dark:bg-indigo" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path fill="#0a3d62" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 01.99-.24 11.36 11.36 0 003.55.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.24.99l-2.21 2.25z"/>
+                        </svg>
+                        <a href="tel:+919818933958">Mobile: +91 981-893-3958</a>
+                        </p>
+                        </div>
+                    </div>
+
+                    <form class="mt-16 space-y-6">
+
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            class="w-full rounded-xl border p-4 dark:bg-slate-900">
+
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            class="w-full rounded-xl border p-4 dark:bg-slate-900">
+
+                        <input
+                            type="tel"
+                            placeholder="Phone Number"
+                            class="w-full rounded-xl border p-4 dark:bg-slate-900">
+
+                        <textarea
+                            rows="5"
+                            placeholder="Message"
+                            class="w-full rounded-xl border p-4 dark:bg-slate-900"></textarea>
+
+                        <button
+                            class="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700">
+                            Send Message
+                        </button>
+                        
+                    </form>
+                    <div class="mt-2 flex items-center gap-2">
+                        <a class="rounded-xl bg-green-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-blue-700" href="https://wa.me/919818933958?text=Hello%20Wealthnestpro" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+                        Connect on Whatsapp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer -->
+
+        <footer class="bg-slate-900 py-10 text-gray-300">
+            <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+                <div>
+                    <img
+                        src="assets/logo.svg"
+                        alt="Company Logo"
+                        class="h-20 w-20">
+                    <h3 class="text-xl font-bold text-white">
+                        wealthnestpro.in
+                    </h3>
+
+                    <p class="mt-2 text-sm">
+                        Trusted loan guidance with expert support and lender access.
+                    </p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#about" class="hover:text-white">About</a>
+                    <a href="#services" class="hover:text-white">Services</a>
+                    <a href="#contact" class="hover:text-white">Contact</a>
+                </div>
+                <div class="text-sm">
+                    © 2026 company wealthnestpro.in. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+
+        <button
+            id="scrollTop"
+            class="fixed bottom-6 right-6 hidden rounded-full bg-blue-600 p-4 text-white shadow-lg transition hover:bg-blue-700">
+            ↑
+        </button>
+        <script src="js/main.js"></script>
+    </body>
+    
 </html>
